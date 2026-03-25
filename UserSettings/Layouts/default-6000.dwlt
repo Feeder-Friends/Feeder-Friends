@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1470
     height: 885
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 123
+  controlID: 126
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 124
+  controlID: 127
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -2089,7 +2089,8 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1354
+      - m_Data: -1340
+      - m_Data: 47490
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2164,7 +2165,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Audio/Game Music/Lounge
+    - Assets/Audio/Buttons, Slides, Dings and Drops/Audio/UI
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2186,13 +2187,16 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 48876
-    - m_Data: 48878
     - m_Data: 48880
     - m_Data: 48882
     - m_Data: 48884
     - m_Data: 48886
     - m_Data: 48888
+    - m_Data: 48890
+    - m_Data: 48892
+    - m_Data: 48894
+    - m_Data: 48896
+    - m_Data: 48898
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2220,18 +2224,22 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: []
+    m_SelectedIDs:
+    - m_Data: 49318
     m_LastClickedID:
-      m_Data: 0
+      m_Data: 49318
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 48876
-    - m_Data: 48878
     - m_Data: 48880
     - m_Data: 48882
     - m_Data: 48884
     - m_Data: 48886
     - m_Data: 48888
+    - m_Data: 48890
+    - m_Data: 48892
+    - m_Data: 48894
+    - m_Data: 48896
+    - m_Data: 48898
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2258,8 +2266,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 49318
+    m_LastClickedInstanceID: 49318
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
