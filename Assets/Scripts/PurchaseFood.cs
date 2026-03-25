@@ -8,12 +8,15 @@ public class PurchaseFood : MonoBehaviour
     private int noteAmount;
     public GameObject foodButton;
     public static bool shopIsOpen = false;
+    private AudioSource audioSource;
+    public AudioClip foodPurchaseSFX;
     void Start()
     {
        foodButton.SetActive(false);
        noteAmount = 30;
        UpdateUI();
        Debug.Log("PurchaseFood is running");
+       audioSource = GetComponent<AudioSource>();
     }
 
     private void UpdateUI()
@@ -26,6 +29,10 @@ public class PurchaseFood : MonoBehaviour
         if(noteAmount > 0)
         {
             noteAmount -= 5;
+            if(audioSource)
+                audioSource.clip = foodPurchaseSFX;
+                audioSource.Play();
+                
             UpdateUI();
         }
         else
