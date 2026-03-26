@@ -16,7 +16,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if(PurchaseFood.shopIsOpen) return;
+        if(PurchaseFood.shopIsOpen || !(PurchaseFood.hasReadHint)) return;
         
         float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float moveY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
