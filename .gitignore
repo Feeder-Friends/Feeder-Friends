@@ -126,3 +126,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Problem Files
+Assembly-CSharp.csproj
+Boxophobic.SkyboxCubemapExtended.Editor.csproj
+Boxophobic.Utils.Editor.csproj
+Boxophobic.Utils.Scripts.csproj
+Feeder-Friends.slnx
+FP1 Game Prototype - Feeder Friends.slnx
