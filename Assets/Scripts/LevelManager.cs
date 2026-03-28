@@ -14,6 +14,10 @@ public class LevelManager : MonoBehaviour
     public PlayerController playerController;
     public MouseLook mouseLook;
     public Animator cameraAnimator;
+    public GameObject reticle;
+    public GameObject winScreen;
+    public Animator zoomAnimator;
+    public OrbitCamera orbitCamera;
     
     private int birdsSpawned = 0;
     private int birdsSpotted = 0;
@@ -25,11 +29,21 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        playerController.enabled = false;
-        mouseLook.enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-
-        StartCoroutine(PlayIntro());
+        if(cameraAnimator != null)
+        {
+            if (playerController != null) playerController.enabled = false;
+            if (mouseLook != null) mouseLook.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            StartCoroutine(PlayIntro());
+        }
+        
+        if(zoomAnimator != null)
+        {
+            orbitCamera.enabled = false;
+            winScreen.SetActive(false);
+            if (mouseLook != null) mouseLook.enabled = false;
+            StartCoroutine(PlayZoomIntro());
+        }
     }
 
     void Update()
@@ -40,15 +54,41 @@ public class LevelManager : MonoBehaviour
     IEnumerator PlayIntro()
     {
         playerMesh.enabled = false;
+        reticle.SetActive(false);
         cameraAnimator.Play("WakingUp");
     
         yield return new WaitForSeconds(cameraAnimator.GetCurrentAnimatorStateInfo(0).length);
     
         cameraAnimator.enabled = false;
+        reticle.SetActive(true);
         playerMesh.enabled = true;
         playerController.enabled = true;
         mouseLook.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    IEnumerator PlayZoomIntro()
+    {
+        zoomAnimator.Play("InitialZoom");
+        reticle.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
+        yield return new WaitForSeconds(zoomAnimator.GetCurrentAnimatorStateInfo(0).length);
+    
+        reticle.SetActive(true);
+        zoomAnimator.enabled = false;
+        orbitCamera.enabled = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+    }
+
+    IEnumerator WinSequence()
+    {
+        winScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("HouseScene");
     }
 
     public void AddBird()
@@ -63,7 +103,7 @@ public class LevelManager : MonoBehaviour
 
         if(birdsSpotted >= maxBirdCount)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(WinSequence());
         }
     }
 

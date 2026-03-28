@@ -52,11 +52,14 @@
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\BirdClick.cs" />
+    <Compile Include="Assets\Scripts\ReticleFollow.cs" />
     <Compile Include="Assets\Scripts\SparrowBehavior.cs" />
     <Compile Include="Assets\Scripts\BirdSpawner.cs" />
+    <Compile Include="Assets\Scripts\ProximityUI.cs" />
     <Compile Include="Assets\Quirky Series - Birds Bundle\_Scripts\Demo.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\SceneChangeClick.cs" />
+    <Compile Include="Assets\Scripts\OrbitCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
