@@ -10,13 +10,12 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         playerBody = transform.parent.transform;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        if(PurchaseFood.shopIsOpen) return;
+        if(PurchaseFood.shopIsOpen || !(PurchaseFood.hasReadHint)) return;
+        if (!enabled) return;
         
         float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float moveY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
