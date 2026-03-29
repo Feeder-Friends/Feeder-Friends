@@ -12,11 +12,10 @@ public class BirdClick : MonoBehaviour
 
     void OnMouseOver()
     {
-        // temp
         Debug.Log($"This is a {gameObject.name}");
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         if(hasBeenSpotted) return;
         
