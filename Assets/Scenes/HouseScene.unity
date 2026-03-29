@@ -269,10 +269,7 @@ RectTransform:
   m_Children:
   - {fileID: 1936567093}
   - {fileID: 302711172}
-  - {fileID: 103536602}
-  - {fileID: 755489960}
-  - {fileID: 144552617}
-  - {fileID: 934368876}
+  - {fileID: 573710834}
   - {fileID: 826156917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -570,45 +567,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8739603187252021473, guid: d8ea93d2d4757e444a5349f4bc849128, type: 3}
---- !u!1 &107755972
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 107755973}
-  - component: {fileID: 107755974}
-  - component: {fileID: 107755975}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &107755973
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107755972}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7.77, y: 5.12, z: 10.73}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1164069543}
-  m_Father: {fileID: 16003865}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -2}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
 --- !u!114 &103536603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +583,41 @@ MonoBehaviour:
   jumpForce: 0.4
   gravity: 9.81
   airControl: 10
+--- !u!1 &107755972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107755973}
+  - component: {fileID: 107755975}
+  - component: {fileID: 103536603}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107755973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107755972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -7.87, y: 5.21, z: 10.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 978457694}
+  - {fileID: 1541131362}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &107755975
 CharacterController:
   m_ObjectHideFlags: 0
@@ -735,17 +728,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144552616}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1471756915}
-  m_Father: {fileID: 16003865}
+  m_Father: {fileID: 573710834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.5119629, y: 0.18109131}
+  m_AnchoredPosition: {x: 0, y: -102.409454}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144552618
@@ -2064,6 +2057,43 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8384901269118361933, guid: ba52853a69186a841a52a9cc2e9b77fa, type: 3}
+--- !u!1 &573710833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573710834}
+  m_Layer: 5
+  m_Name: FoodHint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &573710834
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573710833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 144552617}
+  - {fileID: 934368876}
+  m_Father: {fileID: 16003865}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.5119629, y: 102.590546}
+  m_SizeDelta: {x: 500, y: 254.81891}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &578997713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ba52853a69186a841a52a9cc2e9b77fa, type: 3}
@@ -3385,7 +3415,7 @@ GameObject:
   - component: {fileID: 826156919}
   - component: {fileID: 826156918}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LevelStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3432,8 +3462,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Click the chair \nin order to start \na birdwatching session"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41562500cc5554cf89167763a61b327e, type: 2}
+  m_sharedMaterial: {fileID: -5879253719761200566, guid: 41562500cc5554cf89167763a61b327e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3681,10 +3711,13 @@ MonoBehaviour:
   BirdCounter: {fileID: 1936567094}
   maxBirdCount: 3
   playerMesh: {fileID: 1541131360}
-  playerController: {fileID: 107755974}
+  playerController: {fileID: 103536603}
   mouseLook: {fileID: 978457697}
   cameraAnimator: {fileID: 978457700}
   reticle: {fileID: 302711171}
+  winScreen: {fileID: 0}
+  zoomAnimator: {fileID: 0}
+  orbitCamera: {fileID: 0}
 --- !u!4 &911274817
 Transform:
   m_ObjectHideFlags: 0
@@ -3942,17 +3975,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934368875}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 16003865}
+  m_Father: {fileID: 573710834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.5119629, y: 205}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: 0, y: 76.5}
+  m_SizeDelta: {x: 693.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934368877
 MonoBehaviour:
@@ -4009,7 +4042,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4522,8 +4555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b716a7270409f4b80afd81b644ff282d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PurchaseFood
-  noteCount: {fileID: 1164069544}
-  foodButton: {fileID: 755489959}
+  noteCount: {fileID: 1471756916}
+  foodButton: {fileID: 0}
   foodPurchaseSFX: {fileID: 8300000, guid: eb3ceee3da22a4368a284a670b2fd99b, type: 3}
   hintText: {fileID: 934368875}
   okButton: {fileID: 144552616}
@@ -8514,10 +8547,11 @@ SceneRoots:
   - {fileID: 1244433938}
   - {fileID: 1843495342}
   - {fileID: 705711715}
-  - {fileID: 107755973}
   - {fileID: 911274817}
   - {fileID: 1586840965}
   - {fileID: 465421858}
+  - {fileID: 107755973}
   - {fileID: 16003865}
   - {fileID: 770709009}
   - {fileID: 1920656811}
+  - {fileID: 1077265690}

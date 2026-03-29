@@ -85,8 +85,10 @@ public class PurchaseFood : MonoBehaviour
                Debug.Log("Closing shop!"); 
             }
             else
+            {
                 OpenShop();
                 Debug.Log("Opening shop!");
+            }  
         }
     }
 }
