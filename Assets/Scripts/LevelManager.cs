@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public MouseLook mouseLook;
     public Animator cameraAnimator;
     public GameObject reticle;
+    public GameObject foodHint;
     public GameObject winScreen;
     public Animator zoomAnimator;
     public OrbitCamera orbitCamera;
@@ -55,22 +56,28 @@ public class LevelManager : MonoBehaviour
     {
         playerMesh.enabled = false;
         reticle.SetActive(false);
+        foodHint.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         cameraAnimator.Play("WakingUp");
-    
+        
         yield return new WaitForSeconds(cameraAnimator.GetCurrentAnimatorStateInfo(0).length);
     
+        Debug.Log("Hint should be showing now");
         cameraAnimator.enabled = false;
-        reticle.SetActive(true);
         playerMesh.enabled = true;
         playerController.enabled = true;
-        mouseLook.enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        foodHint.SetActive(true);
+        reticle.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     IEnumerator PlayZoomIntro()
     {
         zoomAnimator.Play("InitialZoom");
         reticle.SetActive(false);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         

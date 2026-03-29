@@ -10,8 +10,6 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         playerBody = transform.parent.transform;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

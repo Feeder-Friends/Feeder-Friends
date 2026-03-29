@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PurchaseFood : MonoBehaviour
 {
+    public GameObject noteCounterUI;
     public TMP_Text noteCount;
     private int noteAmount;
     public GameObject foodButton;
@@ -13,20 +15,17 @@ public class PurchaseFood : MonoBehaviour
     public GameObject hintText;
     public GameObject okButton;
     public static bool hasReadHint = false;
+    public GameObject reticle;
+    public MouseLook mouseLook;
     void Start()
     {
        hasReadHint = false;
 
        foodButton.SetActive(false);
-       hintText.SetActive(true);
-       okButton.SetActive(true);
-
-       Cursor.lockState = CursorLockMode.None;
-       Cursor.visible = true;
-       
+       noteCounterUI.SetActive(false);
        noteAmount = 30;
        UpdateUI();
-       Debug.Log("PurchaseFood is running");
+    //    Debug.Log("PurchaseFood is running");
        audioSource = GetComponent<AudioSource>();
     }
 
@@ -35,6 +34,11 @@ public class PurchaseFood : MonoBehaviour
        hintText.SetActive(false);
        okButton.SetActive(false); 
        hasReadHint = true;
+       noteCounterUI.SetActive(true);
+       reticle.SetActive(true);
+       Cursor.visible = false;
+       Cursor.lockState = CursorLockMode.Locked;
+       mouseLook.enabled = true;
     }
 
     private void UpdateUI()
@@ -63,6 +67,7 @@ public class PurchaseFood : MonoBehaviour
     {
         shopIsOpen = true;
         foodButton.SetActive(true);
+        reticle.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -71,12 +76,15 @@ public class PurchaseFood : MonoBehaviour
     {
         shopIsOpen = false;
         foodButton.SetActive(false);
+        reticle.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
     }
 
     void Update()
     {
+        if(!PurchaseFood.hasReadHint && hintText != null) return;
+        
         if(Input.GetKeyDown(KeyCode.O))
         {
             if(shopIsOpen)
