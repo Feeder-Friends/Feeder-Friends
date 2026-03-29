@@ -2131,7 +2131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   birdPrefabs:
   - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
-  maxBirdCount: 3
+  maxBirdCount: 1
   levelManager: {fileID: 911274816}
 --- !u!4 &465421858
 Transform:
@@ -9716,3 +9716,4 @@ SceneRoots:
   - {fileID: 1920656811}
   - {fileID: 1077265690}
   - {fileID: 1590651291}
+  - {fileID: 7610085955378831724}
