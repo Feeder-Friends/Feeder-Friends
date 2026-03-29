@@ -12,6 +12,8 @@ public class SparrowBehavior : MonoBehaviour
     public SparrowState currentState = SparrowState.Enter;
     private Animator animator;
     public GameObject ledge;
+    public GameObject purchaseManager;
+    public GameObject note;
     public int eatTime = 5;
     private WaitForSeconds eatWait;
     public float speed = 5;
@@ -23,6 +25,10 @@ public class SparrowBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(!purchaseManager)
+        {
+            purchaseManager = GameObject.FindGameObjectWithTag("PurchaseManager");
+        }
         Debug.Log("Original rotation " + transform.eulerAngles);
         animator = GetComponent<Animator>();
         startPosition = transform.position;
@@ -101,6 +107,22 @@ public class SparrowBehavior : MonoBehaviour
         {
             chirp.Play();
             currentState = SparrowState.Eat;
+            Invoke("SpawnNote", 1);
+        }
+    }
+
+    void SpawnNote()
+    {
+        var notePos = transform.position;
+        notePos.y += 0.5f;
+        var noteRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y - 180, transform.eulerAngles.z);
+        Instantiate(note, notePos, Quaternion.Euler(noteRot));
+        Debug.Log("Note spawned");
+        var noteScript = purchaseManager.GetComponent<PurchaseFood>();
+        Debug.Log("NoteScript is" + noteScript.name);
+        if(noteScript)
+        {
+            noteScript.AddNotes();
         }
     }
 }

@@ -121,7 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9932a34528c94f899358b245d86d726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  currentState: 0
   ledge: {fileID: 0}
+  purchaseManager: {fileID: 0}
+  note: {fileID: 2831891073131514687, guid: 8416e4ae311b248e29c2b80c04265ec2, type: 3}
+  eatTime: 5
   speed: 5
 --- !u!82 &1806829852596395793
 AudioSource:

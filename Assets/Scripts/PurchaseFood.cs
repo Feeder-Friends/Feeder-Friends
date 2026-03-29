@@ -24,6 +24,13 @@ public class PurchaseFood : MonoBehaviour
         noteCount.text = noteAmount.ToString();
     }
 
+    public void AddNotes()
+    {
+        noteAmount += 5;   
+        UpdateUI();
+        
+    }
+
     public void SubtractNotes()
     {
         if(noteAmount > 0)

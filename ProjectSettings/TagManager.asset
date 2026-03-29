@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ledge
   - Bird
+  - PurchaseManager
   layers:
   - Default
   - TransparentFX
