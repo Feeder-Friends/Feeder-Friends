@@ -4,9 +4,8 @@ using UnityEngine;
 public class BirdSpawner : MonoBehaviour
 {
     public GameObject[] birdPrefabs;
-    public int maxBirdCount = 3;
+    public int maxBirdCount = 4;
     public LevelManager levelManager;
-    public GameObject ledge;
 
     void Start()
     {
@@ -25,11 +24,9 @@ public class BirdSpawner : MonoBehaviour
     void SpawnBird()
     {
         var randomPrefab = birdPrefabs[Random.Range(0, birdPrefabs.Length)];
-        var positionOffset = Random.insideUnitSphere * 5;
+        // var positionOffset = Random.insideUnitSphere * 5;
         
-        GameObject spawnedBird = Instantiate(randomPrefab, transform.position + positionOffset, transform.rotation);
-        spawnedBird.GetComponent<SparrowBehavior>().ledge = ledge;
-        
+        GameObject spawnedBird = Instantiate(randomPrefab, transform.position, Quaternion.Euler(0, 180, 0));
         levelManager.AddBird();
     }
 
