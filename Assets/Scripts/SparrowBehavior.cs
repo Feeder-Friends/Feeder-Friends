@@ -25,6 +25,27 @@ public class SparrowBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(!ledge)
+        {
+            GameObject[] ledges = GameObject.FindGameObjectsWithTag("Ledge");
+            foreach(GameObject ledge in ledges)
+            {
+                var script = ledge.GetComponent<LedgeStatus>();
+                if(script)
+                {
+                    if(!script.GetOccupied())
+                    {
+                        Debug.Log("ledge found for " + gameObject.name + ": " + ledge.name);
+                        this.ledge = ledge;
+                        script.Occupy();
+                    }
+                }
+                else
+                {
+                    Debug.Log("LedgeStatus Script Not Found");
+                }
+            }
+        }
         if(!purchaseManager)
         {
             purchaseManager = GameObject.FindGameObjectWithTag("PurchaseManager");
@@ -64,7 +85,7 @@ public class SparrowBehavior : MonoBehaviour
     private void Enter()
     {
         animState = 1;
-        transform.LookAt(ledge.transform);
+        transform.LookAt(ledge.transform.parent);
         transform.position = Vector3.MoveTowards(transform.position, ledge.transform.position, speed*Time.deltaTime);
     }
 
@@ -92,6 +113,7 @@ public class SparrowBehavior : MonoBehaviour
                 turned = true;
             }
             transform.position = Vector3.MoveTowards(transform.position, startPosition, speed*Time.deltaTime);
+            Destroy(gameObject, 5);
         }
         
     }
