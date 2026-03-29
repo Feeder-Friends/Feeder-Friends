@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!enabled) return;
+        
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
