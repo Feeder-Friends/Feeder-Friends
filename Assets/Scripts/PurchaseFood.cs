@@ -24,6 +24,7 @@ public class PurchaseFood : MonoBehaviour
        foodButton.SetActive(false);
        noteCounterUI.SetActive(false);
        noteAmount = 30;
+       Debug.Log("On start: NoteAmount is " + noteAmount);
        UpdateUI();
     //    Debug.Log("PurchaseFood is running");
        audioSource = GetComponent<AudioSource>();
@@ -48,9 +49,10 @@ public class PurchaseFood : MonoBehaviour
 
     public void AddNotes()
     {
+        Debug.Log("NoteAmount before adding: " + noteAmount);
         noteAmount += 5;   
+        Debug.Log("NoteAmount after adding: " + noteAmount);
         UpdateUI();
-        
     }
 
     public void SubtractNotes()
@@ -90,6 +92,7 @@ public class PurchaseFood : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Current note amount: " + noteAmount);
         if(!PurchaseFood.hasReadHint && hintText != null) return;
         
         if(Input.GetKeyDown(KeyCode.O))

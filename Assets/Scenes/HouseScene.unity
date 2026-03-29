@@ -913,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 146837713}
   - component: {fileID: 146837712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,6 +1161,54 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1018969631}
   m_SourcePrefab: {fileID: 100100000, guid: ba52853a69186a841a52a9cc2e9b77fa, type: 3}
+--- !u!1 &167990903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167990905}
+  - component: {fileID: 167990904}
+  m_Layer: 0
+  m_Name: BirdSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &167990904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167990903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f82ae1d681bb034c801f279d342327b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ledge: {fileID: 340325354}
+  birdPrefabs:
+  - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
+  levelManager: {fileID: 911274816}
+--- !u!4 &167990905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167990903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 50.289997, y: 12.070001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 363693324}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &222354797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3350746552922454002, guid: d8ea93d2d4757e444a5349f4bc849128, type: 3}
@@ -1613,7 +1661,7 @@ Transform:
   m_GameObject: {fileID: 340325354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.8935, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1652,6 +1700,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.75, y: 0.01, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &363693323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363693324}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &363693324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363693323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.74, y: 2.7, z: -7.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 465421858}
+  - {fileID: 167990905}
+  - {fileID: 1573913268}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &395415637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d8ea93d2d4757e444a5349f4bc849128, type: 3}
@@ -2129,9 +2211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f82ae1d681bb034c801f279d342327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  ledge: {fileID: 1244433937}
   birdPrefabs:
   - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
-  maxBirdCount: 1
   levelManager: {fileID: 911274816}
 --- !u!4 &465421858
 Transform:
@@ -2141,13 +2223,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465421856}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.71, y: 2.39, z: 16.7}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 18.97, y: -0.30999994, z: 24.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 363693324}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &487620055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ba52853a69186a841a52a9cc2e9b77fa, type: 3}
@@ -3373,7 +3455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 777775173}
   - component: {fileID: 777775172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3720,7 +3802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 842316817}
   - component: {fileID: 842316816}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4920,7 +5002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157756753}
   - component: {fileID: 1157756752}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6022,72 +6104,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8739603187252021473, guid: d8ea93d2d4757e444a5349f4bc849128, type: 3}
---- !u!1 &1376447846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1376447847}
-  - component: {fileID: 1376447849}
-  - component: {fileID: 1376447848}
-  m_Layer: 0
-  m_Name: Trigger (3)
-  m_TagString: Ledge
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1376447847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376447846}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.82100105, y: 0, z: -0.82599926}
-  m_LocalScale: {x: 1, y: 1.8935, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2141869160}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1376447848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376447846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca3dbcab81574649b39b8ece864bab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LedgeStatus
---- !u!65 &1376447849
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376447846}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.75, y: 0.01, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1408415694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7329452011999954057, guid: 54617f10bc5163b4592121ec32112a74, type: 3}
@@ -6624,7 +6640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1508508528}
   - component: {fileID: 1508508527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6900,6 +6916,54 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 727056570}
   m_SourcePrefab: {fileID: 100100000, guid: ba52853a69186a841a52a9cc2e9b77fa, type: 3}
+--- !u!1 &1573913266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1573913268}
+  - component: {fileID: 1573913267}
+  m_Layer: 0
+  m_Name: BirdSpawner (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1573913267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573913266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f82ae1d681bb034c801f279d342327b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ledge: {fileID: 77817664}
+  birdPrefabs:
+  - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
+  levelManager: {fileID: 911274816}
+--- !u!4 &1573913268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573913266}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 363693324}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1579154946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3350746552922454002, guid: d8ea93d2d4757e444a5349f4bc849128, type: 3}
@@ -7292,7 +7356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1677850124}
   - component: {fileID: 1677850123}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7345,7 +7409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732975076}
   - component: {fileID: 1732975075}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8015,7 +8079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1843495342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8056,7 +8120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845061785}
   - component: {fileID: 1845061784}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8999,7 +9063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2050647525}
   - component: {fileID: 2050647524}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9240,7 +9304,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1244433938}
-  - {fileID: 1376447847}
   - {fileID: 77817665}
   - {fileID: 340325355}
   m_Father: {fileID: 0}
@@ -9709,7 +9772,7 @@ SceneRoots:
   - {fileID: 705711715}
   - {fileID: 911274817}
   - {fileID: 1586840965}
-  - {fileID: 465421858}
+  - {fileID: 363693324}
   - {fileID: 107755973}
   - {fileID: 16003865}
   - {fileID: 770709009}

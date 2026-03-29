@@ -25,32 +25,11 @@ public class SparrowBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(!ledge)
-        {
-            GameObject[] ledges = GameObject.FindGameObjectsWithTag("Ledge");
-            foreach(GameObject ledge in ledges)
-            {
-                var script = ledge.GetComponent<LedgeStatus>();
-                if(script)
-                {
-                    if(!script.GetOccupied())
-                    {
-                        Debug.Log("ledge found for " + gameObject.name + ": " + ledge.name);
-                        this.ledge = ledge;
-                        script.Occupy();
-                    }
-                }
-                else
-                {
-                    Debug.Log("LedgeStatus Script Not Found");
-                }
-            }
-        }
         if(!purchaseManager)
         {
             purchaseManager = GameObject.FindGameObjectWithTag("PurchaseManager");
         }
-        Debug.Log("Original rotation " + transform.eulerAngles);
+        // Debug.Log("Original rotation " + transform.eulerAngles);
         animator = GetComponent<Animator>();
         startPosition = transform.position;
         chirp = GetComponent<AudioSource>();
@@ -99,7 +78,7 @@ public class SparrowBehavior : MonoBehaviour
 
     private void Exit()
     {
-        Debug.Log("ExitTime: Flyaway is" + flyAway);
+        // Debug.Log("ExitTime: Flyaway is" + flyAway);
         if(!flyAway)
         {
             animState = 3;
@@ -141,7 +120,7 @@ public class SparrowBehavior : MonoBehaviour
         Instantiate(note, notePos, Quaternion.Euler(noteRot));
         Debug.Log("Note spawned");
         var noteScript = purchaseManager.GetComponent<PurchaseFood>();
-        Debug.Log("NoteScript is" + noteScript.name);
+        // Debug.Log("NoteScript is" + noteScript.name);
         if(noteScript)
         {
             noteScript.AddNotes();

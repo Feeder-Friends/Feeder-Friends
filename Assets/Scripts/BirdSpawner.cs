@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class BirdSpawner : MonoBehaviour
 {
+    public GameObject ledge;
     public GameObject[] birdPrefabs;
-    public int maxBirdCount = 4;
+    public static int maxBirdCount = 3;
     public LevelManager levelManager;
 
     void Start()
@@ -26,7 +27,9 @@ public class BirdSpawner : MonoBehaviour
         var randomPrefab = birdPrefabs[Random.Range(0, birdPrefabs.Length)];
         // var positionOffset = Random.insideUnitSphere * 5;
         
-        GameObject spawnedBird = Instantiate(randomPrefab, transform.position, Quaternion.Euler(0, 180, 0));
+        GameObject spawnedBird = Instantiate(randomPrefab, transform.position, transform.rotation);
+        spawnedBird.GetComponent<SparrowBehavior>().ledge = ledge;
+        ledge.GetComponent<LedgeStatus>().Occupy();
         levelManager.AddBird();
     }
 
@@ -37,8 +40,8 @@ public class BirdSpawner : MonoBehaviour
         {
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
             
-            if(birdCount < maxBirdCount)
-            SpawnBird();
+            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied())
+                SpawnBird();
             yield return new WaitForSeconds(spawnInterval);
             Debug.Log("after yield " + Time.time);
         }
