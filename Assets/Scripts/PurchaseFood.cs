@@ -16,13 +16,11 @@ public class PurchaseFood : MonoBehaviour
     public GameObject okButton;
     public static bool hasReadHint = false;
     public GameObject reticle;
-    public MouseLook mouseLook;
     void Start()
     {
        hasReadHint = false;
 
        foodButton.SetActive(false);
-       noteCounterUI.SetActive(false);
        noteAmount = 30;
        Debug.Log("On start: NoteAmount is " + noteAmount);
        UpdateUI();
@@ -38,8 +36,6 @@ public class PurchaseFood : MonoBehaviour
        noteCounterUI.SetActive(true);
        reticle.SetActive(true);
        Cursor.visible = false;
-       Cursor.lockState = CursorLockMode.Locked;
-       mouseLook.enabled = true;
     }
 
     private void UpdateUI()

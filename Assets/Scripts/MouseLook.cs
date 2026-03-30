@@ -14,7 +14,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if(PurchaseFood.shopIsOpen || !(PurchaseFood.hasReadHint)) return;
+        if(!TextManager.readText) return;
         if (!enabled) return;
         
         float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
