@@ -15,10 +15,11 @@ public class LevelManager : MonoBehaviour
     public MouseLook mouseLook;
     public Animator cameraAnimator;
     public GameObject reticle;
-    public GameObject foodHint;
+    public GameObject flavorText;
     public GameObject winScreen;
     public Animator zoomAnimator;
     public OrbitCamera orbitCamera;
+    public GameObject UI;
     
     private int birdsSpawned = 0;
     private int birdsSpotted = 0;
@@ -47,16 +48,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     IEnumerator PlayIntro()
     {
         playerMesh.enabled = false;
         reticle.SetActive(false);
-        foodHint.SetActive(false);
+        flavorText.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         cameraAnimator.Play("WakingUp");
@@ -67,7 +63,7 @@ public class LevelManager : MonoBehaviour
         cameraAnimator.enabled = false;
         playerMesh.enabled = true;
         playerController.enabled = true;
-        foodHint.SetActive(true);
+        flavorText.SetActive(true);
         reticle.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -88,6 +84,10 @@ public class LevelManager : MonoBehaviour
         orbitCamera.enabled = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
+        UI.SetActive(true);
+        reticle.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     IEnumerator WinSequence()
