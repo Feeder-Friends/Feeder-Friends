@@ -4126,6 +4126,7 @@ MonoBehaviour:
   winScreen: {fileID: 0}
   zoomAnimator: {fileID: 0}
   orbitCamera: {fileID: 0}
+  UI: {fileID: 0}
 --- !u!4 &911274817
 Transform:
   m_ObjectHideFlags: 0
@@ -6571,9 +6572,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: deaae01031950fe43b4d157a912760f7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 29dbd280c8741de479cf80f0f76aba38, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

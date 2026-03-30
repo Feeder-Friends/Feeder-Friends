@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PurchaseFood : MonoBehaviour
 {
+    public static int foodLevel = 0;
+    public GameObject seed;
     public GameObject noteCounterUI;
     public TMP_Text noteCount;
     private int noteAmount;
@@ -55,12 +57,14 @@ public class PurchaseFood : MonoBehaviour
     {
         if(noteAmount > 0)
         {
-            noteAmount -= 5;
+            noteAmount -= 10;
             if(audioSource)
                 audioSource.clip = foodPurchaseSFX;
                 audioSource.Play();
                 
             UpdateUI();
+            foodLevel += 10;
+            seed.SetActive(true);
         }
         else
         {
@@ -88,8 +92,13 @@ public class PurchaseFood : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("food level: " + foodLevel);
+        if(foodLevel == 0)
+        {
+            seed.SetActive(false);
+        }
         Debug.Log("Current note amount: " + noteAmount);
-        if(!PurchaseFood.hasReadHint && hintText != null) return;
+        if(!hasReadHint && hintText != null) return;
         
         if(Input.GetKeyDown(KeyCode.O))
         {

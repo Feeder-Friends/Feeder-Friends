@@ -40,7 +40,7 @@ public class BirdSpawner : MonoBehaviour
         {
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
             
-            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied())
+            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0)
                 SpawnBird();
             yield return new WaitForSeconds(spawnInterval);
             Debug.Log("after yield " + Time.time);

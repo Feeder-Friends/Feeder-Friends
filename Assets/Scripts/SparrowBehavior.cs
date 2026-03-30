@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class SparrowBehavior : MonoBehaviour
     private int animState = 0;
     private AudioSource chirp;
     private bool turned = false;
+    public bool hasEaten = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -71,6 +73,9 @@ public class SparrowBehavior : MonoBehaviour
     IEnumerator Eat()
     {
         animState = 2;
+        if(!hasEaten)
+            PurchaseFood.foodLevel -= 2;
+            hasEaten = true;
         yield return eatWait;
         currentState = SparrowState.Exit;
         yield break;
