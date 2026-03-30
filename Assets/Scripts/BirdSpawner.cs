@@ -7,6 +7,7 @@ public class BirdSpawner : MonoBehaviour
     public GameObject[] birdPrefabs;
     public static int maxBirdCount = 3;
     public LevelManager levelManager;
+    private GameObject spawnedBird;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class BirdSpawner : MonoBehaviour
         var randomPrefab = birdPrefabs[Random.Range(0, birdPrefabs.Length)];
         // var positionOffset = Random.insideUnitSphere * 5;
         
-        GameObject spawnedBird = Instantiate(randomPrefab, transform.position, transform.rotation);
+        spawnedBird = Instantiate(randomPrefab, transform.position, transform.rotation);
         spawnedBird.GetComponent<SparrowBehavior>().ledge = ledge;
         ledge.GetComponent<LedgeStatus>().Occupy(true);
         levelManager.AddBird();
@@ -41,7 +42,7 @@ public class BirdSpawner : MonoBehaviour
         {
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
             
-            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0)
+            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0 && spawnedBird == null)
             {
                 Debug.Log("bird spawned by " + gameObject.name);
                 SpawnBird();
