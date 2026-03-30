@@ -30,7 +30,7 @@ public class BirdSpawner : MonoBehaviour
         
         GameObject spawnedBird = Instantiate(randomPrefab, transform.position, transform.rotation);
         spawnedBird.GetComponent<SparrowBehavior>().ledge = ledge;
-        ledge.GetComponent<LedgeStatus>().Occupy();
+        ledge.GetComponent<LedgeStatus>().Occupy(true);
         levelManager.AddBird();
     }
 
@@ -42,8 +42,10 @@ public class BirdSpawner : MonoBehaviour
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
             
             if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0)
+            {
                 Debug.Log("bird spawned by " + gameObject.name);
                 SpawnBird();
+            }
             Debug.Log("waiting to spawn...");
             yield return new WaitForSeconds(spawnInterval);
             //Debug.Log("after yield " + Time.time);

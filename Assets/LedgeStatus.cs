@@ -4,9 +4,9 @@ public class LedgeStatus : MonoBehaviour
 {
     private bool isOccupied = false;
 
-    public void Occupy()
+    public void Occupy(bool occupation)
     {
-        isOccupied = true;
+        isOccupied = occupation;
     }
 
     public bool GetOccupied()

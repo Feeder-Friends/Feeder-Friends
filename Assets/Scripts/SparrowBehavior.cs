@@ -97,9 +97,15 @@ public class SparrowBehavior : MonoBehaviour
                 turned = true;
             }
             transform.position = Vector3.MoveTowards(transform.position, startPosition, speed*Time.deltaTime);
+            Invoke("UnoccupyLedge", 4);
             Destroy(gameObject, 5);
         }
         
+    }
+
+    public void UnoccupyLedge()
+    {
+        ledge.GetComponent<LedgeStatus>().Occupy(false);
     }
 
     public void SetFlyAway()
