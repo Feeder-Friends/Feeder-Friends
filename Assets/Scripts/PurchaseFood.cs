@@ -63,7 +63,7 @@ public class PurchaseFood : MonoBehaviour
                 audioSource.Play();
                 
             UpdateUI();
-            foodLevel += 10;
+            foodLevel += 12;
             seed.SetActive(true);
         }
         else

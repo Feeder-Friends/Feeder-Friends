@@ -24,6 +24,7 @@ public class BirdSpawner : MonoBehaviour
     }
     void SpawnBird()
     {
+        Debug.Log("SpawnBird called");
         var randomPrefab = birdPrefabs[Random.Range(0, birdPrefabs.Length)];
         // var positionOffset = Random.insideUnitSphere * 5;
         
@@ -35,15 +36,17 @@ public class BirdSpawner : MonoBehaviour
 
     IEnumerator SpawnBirds(float spawnInterval)
     {
-        Debug.Log("before yield " + Time.time);
+        //Debug.Log("before yield " + Time.time);
         while(true)
         {
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
             
             if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0)
+                Debug.Log("bird spawned by " + gameObject.name);
                 SpawnBird();
+            Debug.Log("waiting to spawn...");
             yield return new WaitForSeconds(spawnInterval);
-            Debug.Log("after yield " + Time.time);
+            //Debug.Log("after yield " + Time.time);
         }
     }
 }
