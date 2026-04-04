@@ -8,6 +8,7 @@ public class PurchaseFood : MonoBehaviour
     public static int foodLevel = 0;
     public GameObject seed;
     public GameObject noteCounterUI;
+    public GameObject catalog;
     public TMP_Text noteCount;
     private int noteAmount;
     public GameObject foodButton;
@@ -23,6 +24,7 @@ public class PurchaseFood : MonoBehaviour
        hasReadHint = false;
 
        foodButton.SetActive(false);
+       catalog.SetActive(false);
        noteAmount = 30;
        Debug.Log("On start: NoteAmount is " + noteAmount);
        UpdateUI();
@@ -75,6 +77,7 @@ public class PurchaseFood : MonoBehaviour
     public void OpenShop()
     {
         shopIsOpen = true;
+        catalog.SetActive(true);
         foodButton.SetActive(true);
         reticle.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
@@ -84,6 +87,7 @@ public class PurchaseFood : MonoBehaviour
     public void CloseShop()
     {
         shopIsOpen = false;
+        catalog.SetActive(false);
         foodButton.SetActive(false);
         reticle.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
