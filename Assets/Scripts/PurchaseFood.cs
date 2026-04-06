@@ -57,14 +57,17 @@ public class PurchaseFood : MonoBehaviour
     {
         if(noteAmount > 0)
         {
-            noteAmount -= 10;
-            if(audioSource)
-                audioSource.clip = foodPurchaseSFX;
-                audioSource.Play();
-                
-            UpdateUI();
-            foodLevel += 12;
-            seed.SetActive(true);
+            if(noteAmount > 10)
+            { 
+                noteAmount -= 10;
+                if(audioSource)
+                    audioSource.clip = foodPurchaseSFX;
+                    audioSource.Play();
+                    
+                UpdateUI();
+                foodLevel += 12;
+                seed.SetActive(true);
+            }
         }
         else
         {
