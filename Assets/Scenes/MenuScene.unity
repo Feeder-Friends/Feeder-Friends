@@ -941,6 +941,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1524307725}
+    - target: {fileID: 2539440222065652200, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1102181914}
+    - target: {fileID: 4351398712830858813, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351398712830858813, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4415661834187969389, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -948,6 +960,10 @@ PrefabInstance:
     - target: {fileID: 5202071234873516738, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202071234873516738, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230341625293068212, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
       propertyPath: m_Pivot.x
@@ -1028,6 +1044,18 @@ PrefabInstance:
     - target: {fileID: 8230341625293068212, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300210591684818919, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300210591684818919, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300210591684818919, guid: 3d6d1c3f15fe1482ba8dcc538fe2a1d3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
