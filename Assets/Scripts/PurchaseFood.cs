@@ -8,9 +8,10 @@ public class PurchaseFood : MonoBehaviour
     public static int foodLevel = 0;
     public GameObject seed;
     public GameObject noteCounterUI;
+    public GameObject catalog;
     public TMP_Text noteCount;
     private int noteAmount;
-    public GameObject foodButton;
+    public Button foodButton;
     public static bool shopIsOpen = false;
     private AudioSource audioSource;
     public AudioClip foodPurchaseSFX;
@@ -22,7 +23,8 @@ public class PurchaseFood : MonoBehaviour
     {
        hasReadHint = false;
 
-       foodButton.SetActive(false);
+       foodButton.gameObject.SetActive(false);
+       catalog.SetActive(false);
        noteAmount = 30;
        Debug.Log("On start: NoteAmount is " + noteAmount);
        UpdateUI();
@@ -43,6 +45,7 @@ public class PurchaseFood : MonoBehaviour
     private void UpdateUI()
     {
         noteCount.text = noteAmount.ToString();
+        foodButton.interactable = noteAmount >= 10;
     }
 
     public void AddNotes()
@@ -55,21 +58,20 @@ public class PurchaseFood : MonoBehaviour
 
     public void SubtractNotes()
     {
-        if(noteAmount > 0)
+        if(noteAmount >= 10)
         {
-            if(noteAmount > 10)
-            { 
-                noteAmount -= 10;
-                if(audioSource)
-                    audioSource.clip = foodPurchaseSFX;
-                    audioSource.Play();
-                    
-                UpdateUI();
-                foodLevel += 12;
-                seed.SetActive(true);
-            }
+            noteAmount -= 10;
+            if(audioSource)
+            {
+                audioSource.clip = foodPurchaseSFX;
+                audioSource.Play();
+            }    
+
+            UpdateUI();
+            foodLevel += 12;
+            seed.SetActive(true);
         }
-        else
+        else 
         {
             noteAmount = 0;
         }
@@ -78,7 +80,8 @@ public class PurchaseFood : MonoBehaviour
     public void OpenShop()
     {
         shopIsOpen = true;
-        foodButton.SetActive(true);
+        catalog.SetActive(true);
+        foodButton.gameObject.SetActive(true);
         reticle.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -87,7 +90,8 @@ public class PurchaseFood : MonoBehaviour
     public void CloseShop()
     {
         shopIsOpen = false;
-        foodButton.SetActive(false);
+        catalog.SetActive(false);
+        foodButton.gameObject.SetActive(false);
         reticle.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
