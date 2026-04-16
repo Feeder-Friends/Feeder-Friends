@@ -16,12 +16,12 @@ public class LevelMenuController : MonoBehaviour
     {
         if(Input.GetKeyDown("m"))
         {
-            //if(menuActive)
-            //{
-                //CloseMenu();
-            //}
-            //else
-            //{
+            // if(menuActive)
+            // {
+            //     CloseMenu();
+            // }
+            // else
+            // {
                 OpenMenu();
             //}
         }
@@ -57,12 +57,12 @@ public class LevelMenuController : MonoBehaviour
         reticle.SetActive(true);
     }
 
-    //void CloseMenu()
-   // {
-    //    menuActive = false;
-     //   levelMenu.SetActive(false);
-     //   Cursor.lockState = CursorLockMode.None;
-     //   Cursor.visible = false;
-     //   ResumeGame();
-    //}
+    // void CloseMenu()
+    // {
+    //     menuActive = false;
+    //     levelMenu.SetActive(false);
+    //     Cursor.lockState = CursorLockMode.None;
+    //     Cursor.visible = false;
+    //     ResumeGame();
+    // }
 }
