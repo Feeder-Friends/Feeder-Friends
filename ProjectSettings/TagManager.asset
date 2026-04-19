@@ -6,15 +6,16 @@ TagManager:
   tags:
   - Ledge
   - Bird
+  - PurchaseManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PlayerCollliders
   - Water
   - UI
-  - 
-  - 
+  - Birds
+  - Postprocessing
   - 
   - 
   - 
