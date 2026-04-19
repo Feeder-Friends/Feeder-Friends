@@ -4,14 +4,9 @@ using UnityEngine;
 public class BirdClick : MonoBehaviour
 {
     private LevelManager levelManager;
-    public AudioSource cameraSFX;
     private bool hasBeenSpotted = false;
     void Start()
     {
-        if(!cameraSFX)
-        {
-            cameraSFX = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
-        }
        levelManager = FindAnyObjectByType<LevelManager>();
     }
 
@@ -26,7 +21,6 @@ public class BirdClick : MonoBehaviour
         
         hasBeenSpotted = true;
         levelManager.SpotBird();
-        cameraSFX.Play();
         enabled = false;
     }
 }

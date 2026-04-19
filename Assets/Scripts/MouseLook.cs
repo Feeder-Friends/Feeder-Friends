@@ -10,11 +10,12 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         playerBody = transform.parent.transform;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        if(!TextManager.readText) return;
         if (!enabled) return;
         
         float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
