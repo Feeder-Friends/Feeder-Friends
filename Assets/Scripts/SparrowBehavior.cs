@@ -1,10 +1,5 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
-using NUnit.Framework;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [RequireComponent(typeof(AudioSource))]
 public class SparrowBehavior : MonoBehaviour
@@ -19,10 +14,8 @@ public class SparrowBehavior : MonoBehaviour
     private WaitForSeconds eatWait;
     public float speed = 5;
     private Vector3 startPosition;
-    private bool flyAway = false;
     private int animState = 0;
     private AudioSource chirp;
-    private bool turned = false;
     public bool hasEaten = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,7 +24,6 @@ public class SparrowBehavior : MonoBehaviour
         {
             purchaseManager = GameObject.FindGameObjectWithTag("PurchaseManager");
         }
-        // Debug.Log("Original rotation " + transform.eulerAngles);
         animator = GetComponent<Animator>();
         startPosition = transform.position;
         chirp = GetComponent<AudioSource>();
@@ -66,7 +58,6 @@ public class SparrowBehavior : MonoBehaviour
     private void Enter()
     {
         animState = 1;
-        transform.LookAt(ledge.transform.parent);
         transform.position = Vector3.MoveTowards(transform.position, ledge.transform.position, speed*Time.deltaTime);
     }
 
@@ -83,23 +74,11 @@ public class SparrowBehavior : MonoBehaviour
 
     private void Exit()
     {
-        // Debug.Log("ExitTime: Flyaway is" + flyAway);
-        if(!flyAway)
-        {
-            animState = 3;
-        }
-        else
-        { 
-            animState = 1;
-            if(!turned)
-            {
-                transform.Rotate(0, 180, 0, Space.World);
-                turned = true;
-            }
-            transform.position = Vector3.MoveTowards(transform.position, startPosition, speed*Time.deltaTime);
-            Invoke("UnoccupyLedge", 4);
-            Destroy(gameObject, 5);
-        }
+        transform.LookAt(startPosition);
+        animState = 1;
+        transform.position = Vector3.MoveTowards(transform.position, startPosition, speed*Time.deltaTime);
+        Invoke(nameof(UnoccupyLedge), 4);
+        Destroy(gameObject, 5);
         
     }
 
@@ -108,18 +87,13 @@ public class SparrowBehavior : MonoBehaviour
         ledge.GetComponent<LedgeStatus>().Occupy(false);
     }
 
-    public void SetFlyAway()
-    {
-        flyAway = true;
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Ledge"))
         {
             chirp.Play();
             currentState = SparrowState.Eat;
-            Invoke("SpawnNote", 1);
+            Invoke(nameof(SpawnNote), 1);
         }
     }
 

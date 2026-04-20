@@ -95,12 +95,12 @@ public class PurchaseFood : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("food level: " + foodLevel);
+        //Debug.Log("food level: " + foodLevel);
         if(foodLevel == 0)
         {
             seed.SetActive(false);
         }
-        Debug.Log("Current note amount: " + noteAmount);
+        //Debug.Log("Current note amount: " + noteAmount);
         if(!hasReadHint && hintText != null) return;
         
         if(Input.GetKeyDown(KeyCode.O))

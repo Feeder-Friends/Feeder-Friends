@@ -15,10 +15,10 @@ public class BirdClick : MonoBehaviour
        levelManager = FindAnyObjectByType<LevelManager>();
     }
 
-    void OnMouseOver()
-    {
-        Debug.Log($"This is a {gameObject.name}");
-    }
+    // void OnMouseOver()
+    // {
+    //     Debug.Log($"This is a {gameObject.name}");
+    // }
 
     public void OnMouseDown()
     {
