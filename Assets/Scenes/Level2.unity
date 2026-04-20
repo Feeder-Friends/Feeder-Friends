@@ -258,6 +258,7 @@ RectTransform:
   - {fileID: 481358407}
   - {fileID: 800306631}
   - {fileID: 273613978}
+  - {fileID: 1998697549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -390,7 +391,7 @@ PrefabInstance:
     - target: {fileID: 7744295936380471313, guid: ece98d0164afc42c591b6c4dc8cd0106, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1998697550}
     - target: {fileID: 7744295936380471313, guid: ece98d0164afc42c591b6c4dc8cd0106, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AdjustBrightness
@@ -8527,6 +8528,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729912874}
   m_CullTransparentMesh: 1
+--- !u!114 &1797630059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7744295936380471313, guid: ece98d0164afc42c591b6c4dc8cd0106, type: 3}
+  m_PrefabInstance: {fileID: 64642392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!4 &1840399501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3792881496055852593, guid: 92b33e58ca4cf874c805e96afe7cba4f, type: 3}
@@ -9164,6 +9176,127 @@ RectTransform:
   m_AnchoredPosition: {x: 70.702515, y: -34.609985}
   m_SizeDelta: {x: 141.405, y: 69.21997}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1998697548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 16003865}
+    m_Modifications:
+    - target: {fileID: 110543041755312853, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: layer
+      value: 
+      objectReference: {fileID: 978457696}
+    - target: {fileID: 110543041755312853, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: brightnessSlider
+      value: 
+      objectReference: {fileID: 1797630059}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983520674965601662, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+      propertyPath: m_Name
+      value: Brightness
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+--- !u!224 &1998697549 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 880843340215045279, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+  m_PrefabInstance: {fileID: 1998697548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998697550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 110543041755312853, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
+  m_PrefabInstance: {fileID: 1998697548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d469dd0a0fdb04500bf04d5ea54474d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrightnessSettings
 --- !u!1 &2059606786
 GameObject:
   m_ObjectHideFlags: 0
