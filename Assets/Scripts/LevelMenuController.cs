@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelMenuController : MonoBehaviour
@@ -8,7 +9,6 @@ public class LevelMenuController : MonoBehaviour
     public GameObject reticle;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
