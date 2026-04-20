@@ -1962,7 +1962,7 @@ MonoBehaviour:
   noteCounterUI: {fileID: 1976918652}
   catalog: {fileID: 500033212}
   noteCount: {fileID: 1482431814}
-  foodButton: {fileID: 0}
+  foodButton: {fileID: 838026395}
   foodPurchaseSFX: {fileID: 8300000, guid: eb3ceee3da22a4368a284a670b2fd99b, type: 3}
   hintText: {fileID: 1107615318}
   okButton: {fileID: 1261425453}
@@ -4332,6 +4332,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &838026395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8664448175629225324, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
+  m_PrefabInstance: {fileID: 1204341704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &838204742
 GameObject:
   m_ObjectHideFlags: 0
