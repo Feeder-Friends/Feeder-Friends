@@ -41,7 +41,7 @@ public class SquirrelSpawner : MonoBehaviour
     {
         while (true)
         {
-            if (PurchaseFood.foodLevel > 0)
+            if (PurchaseFood.foodLevel[0] > 0)
             {
                 float chance = Random.value;
                 if (chance <= probability)
@@ -72,7 +72,7 @@ public class SquirrelSpawner : MonoBehaviour
             source.Play();
             Debug.Log("Squirrel not defeated, ate all the food");
             squirrel.SetActive(false);
-            PurchaseFood.foodLevel = 0;
+            PurchaseFood.foodLevel[0] = 0;
         }
     }
 }
