@@ -1,17 +1,28 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PurchaseFood : MonoBehaviour
 {
-    public static int foodLevel = 0;
+    [System.Serializable]
+    public class FoodItem
+    {
+        public string name;
+        public Button foodButton;
+        public int cost;
+        public Material seedMaterial;
+        public GameObject[] validBirds;
+    }
+
     public GameObject seed;
+    
+    public static int activeFoodIndex = 0;
+    public static int[] foodLevel = new int[3];
+    public FoodItem[] foodItems = new FoodItem[3];
     public GameObject noteCounterUI;
     public GameObject catalog;
     public TMP_Text noteCount;
     private int noteAmount;
-    public Button foodButton;
     public static bool shopIsOpen = false;
     private AudioSource audioSource;
     public AudioClip foodPurchaseSFX;
@@ -19,16 +30,21 @@ public class PurchaseFood : MonoBehaviour
     public GameObject okButton;
     public static bool hasReadHint = false;
     public GameObject reticle;
+
     void Start()
     {
        hasReadHint = false;
 
-       foodButton.gameObject.SetActive(false);
+       foreach(var item in foodItems)
+        {
+            item.foodButton.gameObject.SetActive(false);
+
+        }
+
        catalog.SetActive(false);
        noteAmount = 30;
        Debug.Log("On start: NoteAmount is " + noteAmount);
        UpdateUI();
-    //    Debug.Log("PurchaseFood is running");
        audioSource = GetComponent<AudioSource>();
     }
 
@@ -45,7 +61,10 @@ public class PurchaseFood : MonoBehaviour
     private void UpdateUI()
     {
         noteCount.text = noteAmount.ToString();
-        foodButton.interactable = noteAmount >= 10;
+        foreach(var item in foodItems)
+        {
+            item.foodButton.interactable = noteAmount >= item.cost;
+        }
     }
 
     public void AddNotes()
@@ -56,11 +75,17 @@ public class PurchaseFood : MonoBehaviour
         UpdateUI();
     }
 
-    public void SubtractNotes()
+    public void SubtractNotes(int foodIndex)
     {
-        if(noteAmount >= 10)
+        if(foodIndex < 0 || foodIndex >= foodItems.Length) 
+            return;
+
+        FoodItem item = foodItems[foodIndex];
+        
+        if(noteAmount >= item.cost)
         {
-            noteAmount -= 10;
+            noteAmount -= item.cost;
+
             if(audioSource)
             {
                 audioSource.clip = foodPurchaseSFX;
@@ -68,8 +93,10 @@ public class PurchaseFood : MonoBehaviour
             }    
 
             UpdateUI();
-            foodLevel += 12;
+            foodLevel[foodIndex] += 12;
+            activeFoodIndex = foodIndex;
             seed.SetActive(true);
+            seed.GetComponent<Renderer>().material = item.seedMaterial;
         }
         else 
         {
@@ -81,7 +108,8 @@ public class PurchaseFood : MonoBehaviour
     {
         shopIsOpen = true;
         catalog.SetActive(true);
-        foodButton.gameObject.SetActive(true);
+        foreach(var item in foodItems)
+            item.foodButton.gameObject.SetActive(true);
         reticle.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -91,7 +119,8 @@ public class PurchaseFood : MonoBehaviour
     {
         shopIsOpen = false;
         catalog.SetActive(false);
-        foodButton.gameObject.SetActive(false);
+        foreach(var item in foodItems)
+            item.foodButton.gameObject.SetActive(false);
         reticle.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
@@ -99,13 +128,19 @@ public class PurchaseFood : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("food level: " + foodLevel);
-        if(foodLevel == 0)
+        bool anyFood = false;
+        for(int i = 0; i < foodItems.Length; i++)
         {
-            seed.SetActive(false);
+            if (foodLevel[i] > 0)
+            {
+                anyFood = true;
+                break;
+            }
         }
-        //Debug.Log("Current note amount: " + noteAmount);
-        if(!hasReadHint && hintText != null) return;
+        seed.SetActive(anyFood);
+
+        if(!hasReadHint && hintText != null) 
+            return;
         
         if(Input.GetKeyDown(KeyCode.O))
         {
