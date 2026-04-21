@@ -5,8 +5,10 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class CatBehavior : MonoBehaviour
 {
+    public AudioSource source;
     public int detectionRange = 5;
     public int patrolRange = 10;
+    bool audioToggle = false;
     Animator animator;
     public enum CatState
     {
@@ -21,54 +23,74 @@ public class CatBehavior : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        if(!player)
-        {   
+        if (!player)
+        {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         destination = transform.position;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(currentState)
+        switch (currentState)
         {
-            case(CatState.Patrol):
+            case (CatState.Patrol):
                 Patrol();
                 break;
-            case(CatState.Idle):
+            case (CatState.Idle):
                 Idle();
                 break;
         }
-        
+
     }
 
     void Patrol()
     {
-        if(Vector3.Distance(transform.position, player.position) <= detectionRange && HasLineOfSight())
+        //Debug.Log("Distance from player: " + Vector3.Distance(transform.position, player.position) + "vs detectionRange: " + detectionRange);
+        if (Vector3.Distance(transform.position, player.position) <= detectionRange && HasLineOfSight())
         {
+            audioToggle = true;
             currentState = CatState.Idle;
         }
-        animator.SetFloat("Vert", 1);
-        agent.isStopped = false;
-        if(Vector3.Distance(transform.position, destination) <= 0.2f)
+        else
         {
-            Debug.Log("Distance is " + Vector3.Distance(transform.position, destination) + ", recalculating destination");
-            destination = FindDestination();
-            Debug.Log("New destination is " + destination);
-            agent.SetDestination(destination);
+            if (audioToggle)
+            {
+                source.Stop();
+                audioToggle = false;
+            }
+            animator.SetFloat("Vert", 1);
+            agent.isStopped = false;
+            if (Vector3.Distance(transform.position, destination) <= 0.2f)
+            {
+                //Debug.Log("Distance is " + Vector3.Distance(transform.position, destination) + ", recalculating destination");
+                destination = FindDestination();
+                //Debug.Log("New destination is " + destination);
+                agent.SetDestination(destination);
+            }
         }
     }
 
     void Idle()
     {
-        if(Vector3.Distance(transform.position, player.position) > detectionRange && !HasLineOfSight())
+        if (Vector3.Distance(transform.position, player.position) > detectionRange && !HasLineOfSight())
         {
+            audioToggle = true;
             currentState = CatState.Patrol;
         }
-        animator.SetFloat("Vert", 0);
-        agent.isStopped = true;
+        else
+        {
+            if (audioToggle)
+            {
+                source.Play();
+                audioToggle = false;
+            }
+            transform.LookAt(player);
+            animator.SetFloat("Vert", 0);
+            agent.isStopped = true;
+        }
     }
 
     bool HasLineOfSight()
@@ -77,12 +99,13 @@ public class CatBehavior : MonoBehaviour
 
         if (Physics.Raycast(transform.position, direction, out RaycastHit hit, detectionRange))
         {
-            if(hit.collider.CompareTag("Player"))
+            if (hit.collider.CompareTag("PlayerBody"))
             {
-                Debug.Log("Player is in sight: " + hit.collider.name);
+                //Debug.Log("Player is in sight: " + hit.collider.name);
                 return true;
             }
         }
+        //Debug.Log("Player is not in sight");
         return false;
     }
 
@@ -102,7 +125,8 @@ public class CatBehavior : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(transform.position, detectionRange);
+        Vector3 direction = (player.position - transform.position).normalized;
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, direction);
     }
 }
