@@ -46,30 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PurchaseFood
   seed: {fileID: 0}
-  foodItems:
-  - name: Bird Seed
-    foodButton: {fileID: 0}
-    cost: 10
-    seedMaterial: {fileID: 2100000, guid: cf6208a4530ae2b4a80f1a04ddabd33e, type: 2}
-    validBirds:
-    - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
-  - name: Sunflower Seed
-    foodButton: {fileID: 0}
-    cost: 12
-    seedMaterial: {fileID: 2100000, guid: 6dca4629ce9f2d641aa80f090af37d75, type: 2}
-    validBirds:
-    - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
-    - {fileID: 4792685613309579126, guid: 0933345843b9d6c4e9f2f31fc6cc93b8, type: 3}
-  - name: Peanuts
-    foodButton: {fileID: 0}
-    cost: 14
-    seedMaterial: {fileID: 2100000, guid: d2ec5631141761e4b9fc641c73d192a5, type: 2}
-    validBirds:
-    - {fileID: 4792685613309579126, guid: b322a9ba3b2c312469ed46212797c23e, type: 3}
-    - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
   noteCounterUI: {fileID: 0}
   catalog: {fileID: 0}
   noteCount: {fileID: 0}
+  foodButton: {fileID: 0}
   foodPurchaseSFX: {fileID: 8300000, guid: eb3ceee3da22a4368a284a670b2fd99b, type: 3}
   hintText: {fileID: 0}
   okButton: {fileID: 0}

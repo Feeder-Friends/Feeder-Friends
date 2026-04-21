@@ -65,7 +65,7 @@ public class SparrowBehavior : MonoBehaviour
     {
         animState = 2;
         if(!hasEaten)
-            PurchaseFood.foodLevel[0] -= 2;
+            PurchaseFood.foodLevel -= 2;
             hasEaten = true;
         yield return eatWait;
         currentState = SparrowState.Exit;
