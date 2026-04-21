@@ -164,7 +164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &16003862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,8 +245,8 @@ RectTransform:
   - {fileID: 302711172}
   - {fileID: 481358407}
   - {fileID: 800306631}
-  - {fileID: 596674112}
   - {fileID: 1698094764}
+  - {fileID: 596674112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -991,17 +991,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6183812469518319871, guid: 83e8d2542718a2e49a73d71c3a5fc685, type: 3}
---- !u!114 &236107821 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-  m_PrefabInstance: {fileID: 9055181735166979134}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &246642017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8872741710590087946, guid: 768be665aba8b4e4aae7a973ae9616cf, type: 3}
@@ -2302,7 +2291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &481358407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2374,8 +2363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ledge: {fileID: 1598985106}
+  birdPrefabs:
+  - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
   levelManager: {fileID: 911274816}
-  purchaseFood: {fileID: 338159103}
 --- !u!1001 &497439179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2668,10 +2658,6 @@ PrefabInstance:
     - target: {fileID: 7983520674965601662, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
       propertyPath: m_Name
       value: Brightness
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983520674965601662, guid: 7c8e6b989ac614b949342bacdaf95830, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3095,17 +3081,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 185015329806187619, guid: 92b33e58ca4cf874c805e96afe7cba4f, type: 3}
   m_PrefabInstance: {fileID: 2953130840719946915}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &662674772 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3825773930961847352, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-  m_PrefabInstance: {fileID: 9055181735166979134}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &662734190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,8 +3126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ledge: {fileID: 1207375173}
+  birdPrefabs:
+  - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
   levelManager: {fileID: 911274816}
-  purchaseFood: {fileID: 338159103}
 --- !u!1 &663493708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3350746552922454002, guid: d8ea93d2d4757e444a5349f4bc849128, type: 3}
@@ -4519,81 +4495,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -224552697089988692, guid: ba52853a69186a841a52a9cc2e9b77fa, type: 3}
---- !u!1 &947673620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 947673621}
-  - component: {fileID: 947673623}
-  - component: {fileID: 947673622}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &947673621
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947673620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.97, y: 0.67, z: 0.91}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698094764}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 9.8}
-  m_SizeDelta: {x: 490, y: 400}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &947673622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947673620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6313726}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &947673623
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947673620}
-  m_CullTransparentMesh: 1
 --- !u!1001 &965028666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7793,7 +7694,7 @@ PrefabInstance:
     - target: {fileID: 2594517185332671107, guid: e54ee20239cc0c64ba033ba310574af1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 10135c84d5e8bc0428d1a2d78d41cd27, type: 2}
+      objectReference: {fileID: 2100000, guid: 7a196668f9173a244a8df43dde87df7b, type: 2}
     - target: {fileID: 6295519928921078806, guid: e54ee20239cc0c64ba033ba310574af1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.7
@@ -7841,7 +7742,7 @@ PrefabInstance:
     - target: {fileID: 8915898595642358715, guid: e54ee20239cc0c64ba033ba310574af1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 10135c84d5e8bc0428d1a2d78d41cd27, type: 2}
+      objectReference: {fileID: 2100000, guid: 7a196668f9173a244a8df43dde87df7b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8074,143 +7975,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.55, y: 0.97, z: 0.51}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1839551417
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839551418}
-  - component: {fileID: 1839551420}
-  - component: {fileID: 1839551419}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1839551418
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839551417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698094764}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3.2}
-  m_SizeDelta: {x: 419.2, y: 46.03}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1839551419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839551417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "Complete \nOne Day of Birdwatching\nTo Unlock More Food"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 41562500cc5554cf89167763a61b327e, type: 2}
-  m_sharedMaterial: {fileID: -5879253719761200566, guid: 41562500cc5554cf89167763a61b327e, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -140.71364}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1839551420
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839551417}
-  m_CullTransparentMesh: 1
 --- !u!4 &1840399501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3792881496055852593, guid: 92b33e58ca4cf874c805e96afe7cba4f, type: 3}
@@ -8758,7 +8522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -36.820007, y: -9.670013}
+  m_AnchoredPosition: {x: 0, y: -8.100006}
   m_SizeDelta: {x: 81.93, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1936567094
@@ -9122,8 +8886,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ledge: {fileID: 931322404}
+  birdPrefabs:
+  - {fileID: 4792685613309579126, guid: 6de301a5072944d52ac99fc271c2bff6, type: 3}
   levelManager: {fileID: 911274816}
-  purchaseFood: {fileID: 338159103}
 --- !u!1 &2085124476
 GameObject:
   m_ObjectHideFlags: 0
@@ -9566,21 +9331,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1482431814}
     - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
-      propertyPath: noteCounterUI
-      value: 
-      objectReference: {fileID: 1976918652}
-    - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
-      propertyPath: foodItems.Array.data[0].foodButton
+      propertyPath: foodButton
       value: 
       objectReference: {fileID: 1452699326}
     - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
-      propertyPath: foodItems.Array.data[1].foodButton
+      propertyPath: noteCounterUI
       value: 
-      objectReference: {fileID: 662674772}
-    - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
-      propertyPath: foodItems.Array.data[2].foodButton
-      value: 
-      objectReference: {fileID: 236107821}
+      objectReference: {fileID: 1976918652}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9594,87 +9351,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16003865}
     m_Modifications:
-    - target: {fileID: 959589440028046945, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_text
-      value: 'Purchase Peanuts!
-
-        -14 Notes'
-      objectReference: {fileID: 0}
     - target: {fileID: 1573441479685645080, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_Name
       value: Catalog
-      objectReference: {fileID: 0}
-    - target: {fileID: 1573441479685645080, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 338159103}
-    - target: {fileID: 3468464103222384605, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_text
-      value: "Purchase Bird Seeds! \n-10 Notes"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825773930961847352, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825773930961847352, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825773930961847352, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 338159103}
-    - target: {fileID: 6270534861227351202, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6466384186641431421, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_Pivot.x
@@ -9756,29 +9435,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6492623295385881988, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_text
-      value: 'Purchase Sunflower Seeds!
-
-        -12 Notes'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7332049191490334732, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8664448175629225324, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 338159103}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6466384186641431421, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 947673621}
-    - targetCorrespondingSourceObject: {fileID: 6466384186641431421, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1839551418}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
 --- !u!1001 &9065888419808072169

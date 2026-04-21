@@ -4,18 +4,18 @@ using UnityEngine;
 public class BirdSpawner : MonoBehaviour
 {
     public GameObject ledge;
+    public GameObject[] birdPrefabs;
     public static int maxBirdCount = 3;
     public LevelManager levelManager;
-    public PurchaseFood purchaseFood;
     private GameObject spawnedBird;
 
     void Start()
     {
-        foreach (var item in purchaseFood.foodItems)
+        foreach (var b in birdPrefabs)
         {
-            if(item.validBirds == null || item.validBirds.Length == 0)
+            if(b == null)
             {
-                Debug.LogWarning($"FoodItem '{item.name}' has no valid birds assigned.");
+                Debug.LogWarning("One or more Bird prefabs are not assigned.");
                 return;
             }
         }
@@ -23,10 +23,11 @@ public class BirdSpawner : MonoBehaviour
         Debug.Log("coroutine yield " + Time.time);
         StartCoroutine(SpawnBirds(2));
     }
-    void SpawnBird(PurchaseFood.FoodItem activeFoodItem)
+    void SpawnBird()
     {
         Debug.Log("SpawnBird called");
-        var randomPrefab = activeFoodItem.validBirds[Random.Range(0, activeFoodItem.validBirds.Length)];
+        var randomPrefab = birdPrefabs[Random.Range(0, birdPrefabs.Length)];
+        // var positionOffset = Random.insideUnitSphere * 5;
         
         spawnedBird = Instantiate(randomPrefab, transform.position, transform.rotation);
         spawnedBird.GetComponent<SparrowBehavior>().ledge = ledge;
@@ -36,24 +37,19 @@ public class BirdSpawner : MonoBehaviour
 
     IEnumerator SpawnBirds(float spawnInterval)
     {
+        //Debug.Log("before yield " + Time.time);
         while(true)
         {
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
-
-            PurchaseFood.FoodItem activeFoodItem = null;
-
-            if(PurchaseFood.foodLevel[PurchaseFood.activeFoodIndex] > 0)
-            {
-                activeFoodItem = purchaseFood.foodItems[PurchaseFood.activeFoodIndex];
-            }
             
-            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && activeFoodItem != null && spawnedBird == null)
+            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0 && spawnedBird == null)
             {
                 Debug.Log("bird spawned by " + gameObject.name);
-                SpawnBird(activeFoodItem);
+                SpawnBird();
             }
             Debug.Log("waiting to spawn...");
             yield return new WaitForSeconds(spawnInterval);
+            //Debug.Log("after yield " + Time.time);
         }
     }
 }
