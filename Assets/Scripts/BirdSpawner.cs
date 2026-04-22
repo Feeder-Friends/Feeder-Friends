@@ -23,6 +23,11 @@ public class BirdSpawner : MonoBehaviour
         Debug.Log("coroutine yield " + Time.time);
         StartCoroutine(SpawnBirds(2));
     }
+
+    public void SetLedge(GameObject newLedge)
+    {
+        ledge = newLedge;
+    }
     void SpawnBird(PurchaseFood.FoodItem activeFoodItem)
     {
         Debug.Log("SpawnBird called");
