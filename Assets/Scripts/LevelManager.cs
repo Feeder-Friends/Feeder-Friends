@@ -94,8 +94,22 @@ public class LevelManager : MonoBehaviour
     {
         winScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("HouseScene");
+        Time.timeScale = 0f;
+    
+        yield return new WaitForSecondsRealtime(3f);
+    
+        Time.timeScale = 1f;
+    
+        int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
+    
+        if (nextIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
+        else
+        {
+            SceneManager.LoadScene(nextIndex);
+        }
     }
 
     public void AddBird()

@@ -8,7 +8,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("HouseScene");
+        SceneManager.LoadScene("Interlude1");
     }
     public void QuitGame()
     {
