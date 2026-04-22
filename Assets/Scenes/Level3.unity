@@ -6290,8 +6290,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hint: Press the "O" key to open the shop and buy food! After you''re done,
-    press "O" again to close the shop. Press the "M" key to open the main menu.'
+  m_text: You can now purchase a new birdfeeder that restocks double the food per
+    purchase. Check the second page of the catalog!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41562500cc5554cf89167763a61b327e, type: 2}
   m_sharedMaterial: {fileID: -5879253719761200566, guid: 41562500cc5554cf89167763a61b327e, type: 2}
