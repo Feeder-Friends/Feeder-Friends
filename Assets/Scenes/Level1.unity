@@ -5661,7 +5661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1231763796
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9569,6 +9569,14 @@ PrefabInstance:
       propertyPath: noteCounterUI
       value: 
       objectReference: {fileID: 1976918652}
+    - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
+      propertyPath: feederSeeds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
+      propertyPath: 'feederSeeds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 305356750}
     - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
       propertyPath: foodItems.Array.data[0].foodButton
       value: 

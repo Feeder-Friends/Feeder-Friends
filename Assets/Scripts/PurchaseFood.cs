@@ -74,12 +74,15 @@ public class PurchaseFood : MonoBehaviour
         {
             item.foodButton.interactable = noteAmount >= item.cost;
         }
-        if (!boughtFeeder)
-        {
-            fancyFeederButton.interactable = noteAmount >= 50;
-        } else
-        {
-            fancyFeederButton.interactable = true;
+        if(fancyFeederButton)
+        {  
+            if (!boughtFeeder)
+            {
+                fancyFeederButton.interactable = noteAmount >= 50;
+            } else
+            {
+                fancyFeederButton.interactable = true;
+            }
         }
     }
 
