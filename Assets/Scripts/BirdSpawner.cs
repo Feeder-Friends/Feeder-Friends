@@ -40,14 +40,9 @@ public class BirdSpawner : MonoBehaviour
         {
             var birdCount = GameObject.FindGameObjectsWithTag("Bird").Length;
 
-            PurchaseFood.FoodItem activeFoodItem = null;
-
-            if(PurchaseFood.foodLevel[PurchaseFood.activeFoodIndex] > 0)
-            {
-                activeFoodItem = purchaseFood.foodItems[PurchaseFood.activeFoodIndex];
-            }
+            PurchaseFood.FoodItem activeFoodItem = purchaseFood.foodItems[PurchaseFood.activeFoodIndex];
             
-            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && activeFoodItem != null && spawnedBird == null)
+            if(birdCount < maxBirdCount && !ledge.GetComponent<LedgeStatus>().GetOccupied() && PurchaseFood.foodLevel > 0 && spawnedBird == null)
             {
                 Debug.Log("bird spawned by " + gameObject.name);
                 SpawnBird(activeFoodItem);

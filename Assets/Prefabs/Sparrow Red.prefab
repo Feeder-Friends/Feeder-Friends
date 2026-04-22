@@ -262,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6788538757290762323, guid: ad4137f595ec8e2449cacca9df7d3735, type: 3}
       propertyPath: m_Name
-      value: Sparrow Variant 2
+      value: Sparrow Red
       objectReference: {fileID: 0}
     - target: {fileID: 6788538757290762323, guid: ad4137f595ec8e2449cacca9df7d3735, type: 3}
       propertyPath: m_Layer
@@ -447,6 +447,7 @@ MonoBehaviour:
   note: {fileID: 2831891073131514687, guid: 8416e4ae311b248e29c2b80c04265ec2, type: 3}
   eatTime: 5
   speed: 5
+  noteAmount: 6
   hasEaten: 0
 --- !u!82 &1806829852596395793
 AudioSource:

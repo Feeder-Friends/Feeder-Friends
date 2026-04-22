@@ -17,7 +17,7 @@ public class PurchaseFood : MonoBehaviour
     public GameObject seed;
     
     public static int activeFoodIndex = 0;
-    public static int[] foodLevel = new int[3];
+    public static int foodLevel = 0;
     public FoodItem[] foodItems = new FoodItem[3];
     public GameObject noteCounterUI;
     public GameObject catalog;
@@ -67,10 +67,10 @@ public class PurchaseFood : MonoBehaviour
         }
     }
 
-    public void AddNotes()
+    public void AddNotes(int notes)
     {
         Debug.Log("NoteAmount before adding: " + noteAmount);
-        noteAmount += 5;   
+        noteAmount += notes;   
         Debug.Log("NoteAmount after adding: " + noteAmount);
         UpdateUI();
     }
@@ -93,7 +93,7 @@ public class PurchaseFood : MonoBehaviour
             }    
 
             UpdateUI();
-            foodLevel[foodIndex] += 12;
+            foodLevel += 12;
             activeFoodIndex = foodIndex;
             seed.SetActive(true);
             seed.GetComponent<Renderer>().material = item.seedMaterial;
@@ -128,16 +128,7 @@ public class PurchaseFood : MonoBehaviour
 
     void Update()
     {
-        bool anyFood = false;
-        for(int i = 0; i < foodItems.Length; i++)
-        {
-            if (foodLevel[i] > 0)
-            {
-                anyFood = true;
-                break;
-            }
-        }
-        seed.SetActive(anyFood);
+        seed.SetActive(foodLevel > 0);
 
         if(!hasReadHint && hintText != null) 
             return;
