@@ -13,6 +13,7 @@ public class SparrowBehavior : MonoBehaviour
     public int eatTime = 5;
     private WaitForSeconds eatWait;
     public float speed = 5;
+    public int noteAmount = 4;
     private Vector3 startPosition;
     private int animState = 0;
     private AudioSource chirp;
@@ -65,7 +66,7 @@ public class SparrowBehavior : MonoBehaviour
     {
         animState = 2;
         if(!hasEaten)
-            PurchaseFood.foodLevel[0] -= 2;
+            PurchaseFood.foodLevel -= 2;
             hasEaten = true;
         yield return eatWait;
         currentState = SparrowState.Exit;
@@ -108,7 +109,7 @@ public class SparrowBehavior : MonoBehaviour
         // Debug.Log("NoteScript is" + noteScript.name);
         if(noteScript)
         {
-            noteScript.AddNotes();
+            noteScript.AddNotes(noteAmount);
         }
     }
 }

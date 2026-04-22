@@ -53,7 +53,6 @@ Shader "Andtech/Star Pack/Particle Standard Glow" {
 			#pragma multi_compile_fog
 			#pragma multi_compile_instancing
 			#pragma multi_compile_particles
-			#pragma multi_compile SOFTPARTICLES_ON
 			#pragma shader_feature_local _FADING_ON
 			#pragma shader_feature _TWINKLE_ON
 

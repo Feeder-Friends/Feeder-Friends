@@ -5661,7 +5661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1231763796
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9570,6 +9570,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1976918652}
     - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
+      propertyPath: feederSeeds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
+      propertyPath: 'feederSeeds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 305356750}
+    - target: {fileID: 8296426064271351202, guid: 291d43389d1f8481e9d744faa80c772e, type: 3}
       propertyPath: foodItems.Array.data[0].foodButton
       value: 
       objectReference: {fileID: 1452699326}
@@ -9594,12 +9602,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16003865}
     m_Modifications:
-    - target: {fileID: 959589440028046945, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_text
-      value: 'Purchase Peanuts!
-
-        -14 Notes'
-      objectReference: {fileID: 0}
     - target: {fileID: 1573441479685645080, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_Name
       value: Catalog
@@ -9755,12 +9757,6 @@ PrefabInstance:
     - target: {fileID: 6466384186641431421, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6492623295385881988, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
-      propertyPath: m_text
-      value: 'Purchase Sunflower Seeds!
-
-        -12 Notes'
       objectReference: {fileID: 0}
     - target: {fileID: 7332049191490334732, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_IsActive
