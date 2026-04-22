@@ -4,7 +4,6 @@ using UnityEngine;
 public class TextManager : MonoBehaviour
 {
     public static bool readText = false;
-    public GameObject hint;
     public GameObject flavorText;
     public GameObject okButton;
     public GameObject noteCounterUI;

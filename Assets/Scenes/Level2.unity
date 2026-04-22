@@ -7474,6 +7474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 723825836}
     m_Modifications:
+    - target: {fileID: 1670608842559747030, guid: 7a9dfae893f7a9043a240af63f47c989, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2688396106661986412, guid: 7a9dfae893f7a9043a240af63f47c989, type: 3}
       propertyPath: m_Name
       value: Chair02
@@ -7533,6 +7537,10 @@ PrefabInstance:
     - target: {fileID: 4682381770028586362, guid: 7a9dfae893f7a9043a240af63f47c989, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586002908800145508, guid: 7a9dfae893f7a9043a240af63f47c989, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
