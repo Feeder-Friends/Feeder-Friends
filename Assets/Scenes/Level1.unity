@@ -5160,7 +5160,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Hint: Press the "O" key to open the shop and buy food! After you''re done,
-    press "O" again to close the shop. Press the "M" key to open the main menu.'
+    press "O" again to close the shop. Press the "M" key to open the main menu.
+
+
+
+    Click
+    birds to photograph them and progress.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41562500cc5554cf89167763a61b327e, type: 2}
   m_sharedMaterial: {fileID: -5879253719761200566, guid: 41562500cc5554cf89167763a61b327e, type: 2}
@@ -9608,7 +9613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1573441479685645080, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1638974999861368160, guid: 9832e5a01d1cd43ea9c1246662a1d155, type: 3}
       propertyPath: m_Interactable
